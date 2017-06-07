@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ViewController, ToastController } from "ionic-angular";
+import { ViewController, ToastController, NavParams } from "ionic-angular";
 
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
@@ -15,7 +15,15 @@ export class SubirPage {
   imgPrewiew:string = null;
   img:string = null;
 
-  constructor( private viewCtrl:ViewController, private camera: Camera, private toastCtrl:ToastController, private imagePicker: ImagePicker ) {
+  parameter1:string;
+  parameter2:string;
+
+  constructor( private navParams:NavParams, private viewCtrl:ViewController, private camera:Camera, private toastCtrl:ToastController, private imagePicker:ImagePicker ) {
+    this.parameter1 = navParams.get('param1');
+    this.parameter2 = navParams.get('param2');
+
+    console.log(this.parameter1);
+    console.log(this.parameter2);
   }
 
   closeModal(){

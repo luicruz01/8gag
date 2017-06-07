@@ -20,7 +20,13 @@ export class HomePage {
 
   showModal() {
     console.log("ALV");
-    let modal = this.modalCtrl.create( SubirPage );
+    let modal = this.modalCtrl.create(
+      SubirPage,
+      {
+        param1: 'John',
+        param2: 'Johnson'
+      }
+    );
     modal.present();
   }
 
