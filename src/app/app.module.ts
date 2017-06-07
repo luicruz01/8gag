@@ -16,6 +16,7 @@ import { SubirPage } from "../pages/subir/subir";
 
 import { firebaseConfig } from "../config/firebase.config";
 import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
+import { UploadFilesProvider } from '../providers/upload-files/upload-files';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
     SplashScreen,
     Camera,
     ImagePicker,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UploadFilesProvider
   ]
 })
 export class AppModule {}
